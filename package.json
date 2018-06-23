@@ -1,35 +1,32 @@
 {
-    "name": "blobchain",
-    "version": "1.0.0",
-    "description": "",
-    "main": "main.js",
-    "scripts": {
-      "start": "node main.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/kthomas4031/blobchain.git"
-    },
-    "author": "Kyle Thomas",
-    "contributors": [
-      {
-        "name": "Quinn Donoho"
-      },
-      {
-          "name": "Lina Brihoum"
-      },
-      {
-          "name": "Zoe Sewell"
-      }
-    ],
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/kthomas4031/blobchain/issues"
-    },
-    "homepage": "https://github.com/kthomas4031/blobchain#readme",
-    "dependencies": {
-      "convict": "^4.3.0"
-    }
-  }
-  
+  "name": "blobchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kthomas4031/blobchain.git"
+  },
+  "author": "Kyle Thomas",
+  "contributors": [
+    "Quinn Donoho",
+    "Lina Brihoum",
+    "Zoe Sewell"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kthomas4031/blobchain/issues"
+  },
+  "homepage": "https://github.com/kthomas4031/blobchain#readme",
+  "dependencies": {
+    "convict": "^4.3.0",
+    "mongodb": "^3.0.10",
+    "truffle": "^4.1.12"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
