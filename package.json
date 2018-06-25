@@ -15,9 +15,11 @@
   },
   "author": "Kyle Thomas",
   "contributors": [
-    "Quinn Donoho",
-    "Lina Brihoum",
-    "Zoe Sewell"
+    {"name": "Quinn Donoho",
+    "url": "https://github.com/dewdrive101"},
+    {"name": "Lina Brihoum",
+    "url": "https://github.com/lbrihoum"},
+    {"name": "Zoe Sewell"}
   ],
   "license": "MIT",
   "bugs": {
