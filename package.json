@@ -15,11 +15,17 @@
   },
   "author": "Kyle Thomas",
   "contributors": [
-    {"name": "Quinn Donoho",
-    "url": "https://github.com/dewdrive101"},
-    {"name": "Lina Brihoum",
-    "url": "https://github.com/lbrihoum"},
-    {"name": "Zoe Sewell"}
+    {
+      "name": "Quinn Donoho",
+      "url": "https://github.com/dewdrive101"
+    },
+    {
+      "name": "Lina Brihoum",
+      "url": "https://github.com/lbrihoum"
+    },
+    {
+      "name": "Zoe Sewell"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -29,7 +35,8 @@
   "dependencies": {
     "convict": "^4.3.0",
     "mongodb": "^3.0.10",
-    "truffle": "^4.1.12"
+    "truffle": "^4.1.12",
+    "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {},
   "keywords": []
