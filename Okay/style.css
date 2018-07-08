@@ -1,24 +1,25 @@
-* 
-{ 
-    margin: 0; 
-    padding: 0; 
-} 
- 
-header 
-{ 
-    background-image: url(images/boop.jpg); 
-    height: 100vh; 
-    background-size: cover; 
-    background-position: center; 
-} 
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    background-image: url(images/boop.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    /*font: 15px/1.5 Arial, Helvetica, sans-serif, "Roboto-Thin";*/
+    font-family: Helvetica;
 }
 
-/* .background 
+/* .background
 {
     position: absolute;
     right: 0;
@@ -43,8 +44,8 @@ body {
 
 #showcase
 {
-    min-height: 800px;
-    background: url(images/screen.jpg);
+    min-height: 600px;
+    background: url(images/z_purple_galaxy2.jpg);
     text-align: center;
     color: white;
 }
@@ -53,28 +54,35 @@ body {
 {
     margin-top: 100px;
     font-size: 55px;
+    font-style: none;
+    padding: 20px;
+    text-transform: lowercase;
 }
 
-#showcase p 
+#showcase p
 {
     font-size: 20px;
+    font-style: none;
+    text-transform: lowercase;
 }
 
 #username
 {
-    background: rgb(128, 108, 108);
+    background: #C669FF;
     padding: 15px;
 }
 
-#username h1 
+#username h1
 {
     float: left;
+    color: #FFFFFF;
 }
 
-#username form 
+#username form
 {
     float: right;
-    margin-top: 15px;
+    /*padding: 15px;*/
+    margin-top: 2px;
 }
 
 #username input[type="text"]
@@ -82,29 +90,32 @@ body {
     padding: 4px;
     height: 25px;
     width: 250px;
+    color: #C669FF;
 }
- 
-nav  
-{ 
+
+nav
+{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    /*
     width: 100%;
-    height: 100px;
+    */
+    height: 50px;
     padding: 10px 100px;
     box-sizing: border-box;
     transition: .3s;
-} 
+}
 
 nav.black
 {
     background: rgba(0, 0, 0, 0.8);
-    height: 100px;
+    height: 50px;
     padding: 10px 100px;
 }
 
-nav ul 
+nav ul
 {
     list-style: none;
     float: right;
@@ -113,29 +124,39 @@ nav ul
     display: flex;
 }
 
-nav ul li 
+nav ul li
 {
     list-style: none;
 }
 
-nav ul li a 
+nav ul li a
 {
-    line-height: 80px;
-    color: aquamarine;
+    line-height: 30px;
+    color: #C669FF;
     padding: 12px;
     text-decoration: none;
     text-transform: uppercase;
     transition: .3s;
 }
 
-nav.black ul li a 
+nav ul li a:hover
 {
-    color: aquamarine;
+    color: #FFFFFF;
+}
+
+nav.black ul li a
+{
+    color: #C669FF;
 }
 
 nav.black ul li a:focus
 {
     outline: none;
+}
+
+nav.black ul li a:hover
+{
+    color: #FFFFFF;
 }
 
 nav.black ul li a.active
@@ -145,23 +166,25 @@ nav.black ul li a.active
     border-radius: 6px;
 }
 
-footer 
+footer
 {
     padding: 20px;
     margin-top: 20px;
-    color: rgb(128, 108, 108);
-    background-color: rgb(128, 108, 108);
+    color: #C780F2;
+    background-color: #C780F2;
     text-align: center;
 }
 
-.container 
+.container
 {
-    width: 80%;
+    width: 60%;
+    font-style: none;
+    font: Roboto-Thin;
     margin: auto;
     overflow: hidden;
 }
 
-section.sec1 
+section.sec1
 {
     padding: 10px;
     background-size: cover;
@@ -218,7 +241,7 @@ l
 .slider
 {
     overflow: hidden;
-    height: 350px;
+    height: 800px;
 }
 
 .slider figure div
@@ -232,12 +255,43 @@ l
     width: 100%;
 }
 
-.slider figure 
+.slider figure
 {
     position: relative;
     width: 500%;
     margin: 0;
     animation: 30s slidy infinite;
+}
+
+.navbar 
+{
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color: #FFFFFF;
+    color: #7B00C6;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: #7B00C6;
+    color: white;
 }
 
 @keyframes slidy
