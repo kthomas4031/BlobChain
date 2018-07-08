@@ -12,7 +12,7 @@ export const config = convict({
 		"doc": "wumbo",
 		"format": "Boolean",
 		"default": true,
-		"env": "WUMBO",
+		"env": "WUMBO todoroki",
 		"arg": "wumbo"
 	}
 });
