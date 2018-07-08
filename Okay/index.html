@@ -1,12 +1,13 @@
 <html>
     <head>
-        <title> Cutie </title>
-        <meta name="viewport" content="width=device-width">
+        <title> Blobchain </title>
+        <meta name=`viewport` content="width=device-width">
         <link href = "style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
         <script src=”web3.js-develop/dist/web3.js”></script>
+        <script src='./script/setup.js'></script>
         <script type="text/javascript">
             $(window).on('scroll', function() {
                 if($(window).scrollTop()) {
@@ -14,6 +15,17 @@
                 }
                 else {
                     $('nav').removeClass('black');
+                }
+            })
+            window.addEventListener('load', function() {
+                // Check if Web3 has been injected by the browser:
+                if (typeof web3 !== 'undefined') {
+                    // You have a web3 browser! Continue below!
+                    startApp(web3);
+                } else {
+                    // Warn the user that they need to get a web3 browser
+                    alert(`Please Enable MetaMask.io`);
+                    // Or install MetaMask, maybe with a nice graphic.
                 }
             })
         </script>
@@ -24,6 +36,7 @@
                 <nav>
                     <ul>
                         <li><a href=""> HOME </a></li>
+                        <li><a href=""> ANALYTICS </a></li>
                         <li><a href=""> ABOUT </a></li>
                         <li><a href=""> TEAM </a></li>
                         <li><a href=""> CONTACT </a></li>
