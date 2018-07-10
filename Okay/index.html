@@ -6,8 +6,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
-        <script src=”web3.js-develop/dist/web3.js”></script>
-        <script src='./script/setup.js'></script>
+        <script src="http://raw.githubusercontent.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
+        <script src='script/setup.js'></script>
         <script type="text/javascript">
             $(window).on('scroll', function() {
                 if($(window).scrollTop()) {
@@ -21,121 +21,127 @@
                 // Check if Web3 has been injected by the browser:
                 if (typeof web3 !== 'undefined') {
                     // You have a web3 browser! Continue below!
-                    startApp(web3);
+                    web3 = new Web3(web3.currentProvider); 
+                    console.log(web3.eth.accounts);
+                    var account = web3.eth.accounts[0];
                 } else {
                     // Warn the user that they need to get a web3 browser
-                    alert(`Please Enable MetaMask.io`);
-                    // Or install MetaMask, maybe with a nice graphic. how though
+                    alert("Please Install MetaMask.io");                    
                 }
             })
         </script>
     </head>
     <body>
-
-            <div class="wrapper">
-                <nav>
-                    <ul>
-                        <li><a href="#top"> HOME </a></li>
-                        <li><a href="#analyticsspace"> ANALYTICS </a></li>
-                        <li><a href="#aboutspace"> ABOUT </a></li>
-                        <li><a href="#teamspace"> TEAM </a></li>
-                        <!-- <li><a href=""> CONTACT </a></li> -->
-                    </ul>
-                </nav>
-                
-                <section id="showcase">
-                    <div class="container">
-                        <h1> bushey bunch </h1>
-                        <p> hello todoroki is the best boy fight me</p>
-                    </div>
-                </section>
-
-                <section id="username">
-                        <div class="container">
-                            <h1> please enter your username </h1>
-                            <form>
-                                <input type="text" placeholder="enter username...">
-                                <button type="submit" class="button"> enter </button>
-                            </form>
-                        </div>
-                </section>
-           
-
-                <section class="sec1"> </section>
-                <section id="boxes">
-                    <div class="container">
-
-                        <div class="box">
-
-                            <a href="https://en.wikipedia.org/wiki/Blockchain">
-                                <img src="images/z_bakugou1.gif">
-                            </a>
-
-                            <h2> Blockchain </h2>
-                            <p> This is a blockchain, it's cool</p>
-                        </div>
-
-                        <div class="box">
-
-                            <a href="https://en.wikipedia.org/wiki/Cryptocurrency">
-                                <img src="images/z_raikugif.gif">
-                            </a>
-
-                            <h3> Cryptocurrency </h3>
-                            <p> This is a new kind of money, it's cool</p>
-                        </div>
-
-                        <div class="box">
-                            <a href="https://app.synapsefl.com">
-                                <img src="images/z_idk3.gif">
-                            </a>
-
-                            <h4> Synapse </h4>
-                            <p> This is a COOL PLACE</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content"> 
-                    <p> 
-                    </p>
-                </section>
-
-                <div class="slider">
-                    <figure>
-                        <div class="slide">
-                            <img src="images/tracers.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="images/z_1.gif">
-                        </div>
-                        <div class="slide">
-                            <l> </l>
-                            <img src="images/naruto.jpg">
-                        </div>
-                        <div class="slide">
-                                <img src="images/z_mood.gif">
-                            </div>
-                            <div class="slide">
-                                <img src="images/lover.jpg">
-                            </div>
-                    </figure>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="#top"> HOME </a></li>
+                    <li><a href="#analyticsspace"> ANALYTICS </a></li>
+                    <li><a href="#aboutspace"> ABOUT </a></li>
+                    <li><a href="#teamspace"> TEAM </a></li>
+                    <!-- <li><a href=""> CONTACT </a></li> -->
+                </ul>
+            </nav>
+            
+            <section id="showcase">
+                <div class="container">
+                    <h1> BlobChain </h1>
+                    <p> The Bushey Bunch</p>
                 </div>
+            </section>
 
-                <section id="spacer"></section>
+            <section id="username">
+                <div class="container">
+                    <h1> please enter your username </h1>
+                    <form>
+                        <input type="text" placeholder="enter username...">
+                        <button type="submit" class="button"> enter </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="sec1"> </section>
+
+            <section id="boxes">
+                <div class="container">
+                    <div class="box">
+                        <a href="https://metamask.io/">
+                            <img src="images/metamask-logo.png">
+                        </a>
+                        <h1> MetaMask </h1>
+                        <p> How to install MetaMask.io</p>
+                    </div>  
+
+                    <div class="box">
+                        <a href="https://en.wikipedia.org/wiki/Blockchain">
+                            <img src="images/z_bakugou1.gif">
+                        </a>
+                        <h1> Blockchain </h1>
+                        <p> This is what a blockchain is, it's cool</p>
+                    </div>
+
+                    <div class="box">
+                        <a href="https://ethereum.org/">
+                            <img src="images/Ethereum.png">
+                        </a>
+                        <h1> Ethereum </h1>
+                        <p> The project page for the Ethereum blockchain</p>
+                    </div>
+
+                    <div class="box">
+                        <a href="https://coinmarketcap.com/">
+                            <img src="images/z_zoe.gif">
+                        </a>
+                        <h1>Currency Rates</h1> 
+                        <p> The constant, everchanging numbers of cryptocurrency</p>
+                    </div>
+
+                    <div class="box">
+                        <a href="https://app.synapsefl.com">
+                            <img src="images/Synapse.png">
+                        </a>
+                        <h1> Synapse </h1>
+                        <p> This is a COOL PLACE with some AWESOME STUFF</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content"> 
+                <p></p>
+            </section>
+
+            <div class="slider">
+                <figure>
+                    <div class="slide">
+                        <img src="images/tracers.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="images/z_1.gif">
+                    </div>
+                    <div class="slide">
+                        <l> </l>
+                        <img src="images/naruto.jpg">
+                    </div>
+                    <div class="slide">
+                            <img src="images/z_mood.gif">
+                        </div>
+                        <div class="slide">
+                            <img src="images/lover.jpg">
+                        </div>
+                </figure>
+            </div>
+
+            <section id="spacer"></section>
                 
-                <section class="section_spacer" id="analyticsspace"></section>  
+            <section class="section_spacer" id="analyticsspace"></section>  
                 
             <section id="analytics">
-
-                    <p>  ANALYTICS, but good lord IDK what we want to write here. 
-                            <img src="images/z_idk.gif">
-                    </p>
-                </section>
-            
-            
-                <section class="section_spacer" id="aboutspace">
-                    </section>
+                <p>  ANALYTICS, but good lord IDK what we want to write here. 
+                    <img src="images/z_idk.gif">
+                </p>
+            </section>
+                
+            <section class="section_spacer" id="aboutspace"></section>
 
             <section id="about"> 
                 <p>  
@@ -146,58 +152,65 @@
                     
                     <img src="images/z_zoe.gif">
                 </p>
-                </section>
+            </section>
 
-                <section class="section_spacer" id="teamspace">
-                    </section>
+            <section class="section_spacer" id="teamspace"></section>
 
-                <section id="team"> 
-                        <p>  
-                            TEAM: 
-                            so this team consists of 3 smart people and one not so smart person, we will leave it up
-                            to you to decide which is which. </p>
+            <section id="team"> 
+                <p>  
+                TEAM: 
+                so this team consists of 3 smart people and one not so smart person, we will leave it up
+                to you to decide which is which. </p>
+                <p>
+                    <img src="images/im not sure.png" style="width:900px;">
+                </p>
+                <p> KYLE: </p>
+                <p>
+                    <img src="images/z_kyle.gif">
+                </p>
+                <p> LINA: </p>
+                <p>
+                    <img src="images/z_lina.gif">
+                </p>
+                <p> QUINN: </p>
+                <p>
+                    <img src="images/z_quinn2.gif">
+                </p>
+                <p> ZOE: </p>
+                <p>
+                    <img src="images/z_zoe2.gif">
+                </p>
+            </section>
 
-                            <p>
-                                <img src="images/im not sure.png" style="width:900px;">
-                            </p>
+            <section class="section_spacer"></section>
 
+            <h1>Account Info-</h1>
+            <p>Latest Block:
+                <script>
+                    web3.eth.getBlockNumber(function callback(error, result){
+                        if(!error)
+                            //document.write(result);
+                        else
+                            console.error(error);
+                    });
+                </script>
+            </p>
+            <p>Account Balance:
+                <script type="text/javascript">
+                    let balance = web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]).toNumber, 'ether');
+                    document.write('[' + account + ']<br><br>')
+                    document.write(balance + 'Ether');
+                </script>
 
-                            <p> KYLE: </p>
-                            <p>
-                            <img src="images/z_kyle.gif">
-                            </p>
+            </p>
 
-                            <p> LINA: </p>
-                            <p>
-                            <img src="images/z_lina.gif">
-                            </p>
-
-                            <p> QUINN: </p>
-                        <p>
-                        <img src="images/z_quinn2.gif">
-                        </p>
-
-                        <p> ZOE: </p>
-                        <p>
-                        <img src="images/z_zoe2.gif">
-                        </p>
-                </section>
-
-                <section class="section_spacer">
-                    </section>
+            <section class="section_spacer"></section>
 
             <div class="navbar">
-
                 <a href="#home" class="active">home</a>
-
-                <a href="#contact">this bar is useless</a>
                 <!-- im not sure what other buttons we will need here so have this -->
                 <a href="#other"> other button</a>
             </div>
-
         </div> <!-- div for navigation-->
 </body>
-
-
-
 </html>

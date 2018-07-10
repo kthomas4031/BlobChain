@@ -178,7 +178,7 @@ footer
 
 .container
 {
-    width: 60%;
+    width: 50%;
     font-style: none;
     font: Roboto-Thin;
     margin: auto;
@@ -243,8 +243,6 @@ section.sec1
     line-height: 30px;
 }
 
-
-
 #boxes
 {
     margin-top: 20px;
@@ -261,6 +259,7 @@ section.sec1
 #boxes .box img
 {
     width: 90px;
+    height: 80px;
 }
 
 #thatthing
