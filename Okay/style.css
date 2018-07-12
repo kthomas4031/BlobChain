@@ -12,7 +12,7 @@ header a:hover
 }
 
 body {
-    background: url(images/z_purple_galaxy3.jpg);
+    background: url(images/background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,6 +55,7 @@ body {
 {
     background: #C669FF;
     padding: 20px;
+    height: 40px;
 }
 
 #username h1
@@ -92,12 +93,13 @@ footer
 
 .container
 {
-    width: 60%;
+    width: 70%;
     background-color: #FFFFFF;
     font-style: none;
     font: Roboto-Thin;
     margin: auto;
     overflow: hidden;
+    text-align: center;
 }
 
 #boxes
@@ -131,10 +133,10 @@ footer
     font-family: 'Lato';
 } */
 
-.slider
+slider
 {
     overflow: hidden;
-    height: 800px;
+    height: 300px;
 }
 
 .slider figure div
@@ -173,7 +175,7 @@ footer
 {
     float: left;
     text-align: center;
-    width: 30%;
+    width: 40%;
     padding: 20px;
 }
 
@@ -234,4 +236,35 @@ footer
     96% {
         Left: 0%;
     }
+}
+
+h100 {
+    background-color: black;
+    font-size: 30pt;
+}
+
+.h100container {
+    background: black;
+    background-size: cover;
+}
+
+#spacer 
+{
+    height: 30px;
+    background: url(images/galaxy4k_2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#spacer 
+{
+    height: 30px;
+    background: url(images/galaxy4k_2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
