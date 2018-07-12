@@ -1,206 +1,243 @@
-<html>
-    <head>
-        <title> Blobchain </title>
-        <meta name=`viewport` content="width=device-width">
-        <link href = "style.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
-        <script src='script/setup.js'></script>
-        <script type="text/javascript">
-            $(window).on('scroll', function() {
-                if($(window).scrollTop()) {
-                    $('nav').addClass('black');
-                }
-                else {
-                    $('nav').removeClass('black');
-                }
-            })
-            window.addEventListener('load', function() {
-                // Check if Web3 has been injected by the browser:
-                if (typeof web3 !== 'undefined') {
-                    // You have a web3 browser! Continue below!
-                    setup();
-                } else {
-                    // Warn the user that they need to get a web3 browser
-                    alert("Please Install MetaMask.io");                    
-                }
-            })
-        </script>
-    </head>
-    <body>
-        <div class="wrapper">
-            <nav>
-                <ul>
-                    <li><a href="#top"> HOME </a></li>
-                    <li><a href="#analyticsspace"> ANALYTICS </a></li>
-                    <li><a href="#aboutspace"> ABOUT </a></li>
-                    <li><a href="#teamspace"> TEAM </a></li>
-                    <!-- <li><a href=""> CONTACT </a></li> -->
-                </ul>
-            </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Metadata -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+
+	<!-- Title -->
+	<title>Blobchain</title>
+
+	<!-- Thumbnails -->
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.icns" />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Inline Stylesheet -->
+	<style></style>
+
+</head>
+<body>
+
+	<header id="header">
+		<h1><a href="#" id="blobchainAnchor">BLOBCHAIN</a></h1>
+		<a href="#" id="analyticsAnchor">ANALYTICS</a>
+        <a href="#" id="aboutAnchor">ABOUT</a>
+        <a href="#" id="teamAnchor">TEAM</a>
+        <a href="#" id="accountAnchor">ACCOUNT</a>
+	</header>
+
+	<main id="main" class="wrapper">
+
+        <section id="showcase">
+            <h1>BlobChain </h1>
+            <p>The Bushey Bunch</p>
+        </section>
             
-            <section id="showcase">
-                <div class="container">
-                    <h1> BlobChain </h1>
-                    <p> The Bushey Bunch</p>
-                </div>
-            </section>
-
             <section id="username">
-                <div class="container">
-                    <h1> please enter your username </h1>
-                    <form>
-                        <input type="text" placeholder="enter username...">
-                        <button type="submit" class="button"> enter </button>
-                    </form>
-                </div>
+                <h1>please enter your username</h1>
+                <form>
+                    <input type="text" placeholder="enter username...">
+                    <button type="submit" class="button">enter</button>
+                </form>
             </section>
-
-            <section class="sec1"> </section>
-
-            <section id="boxes">
-                <div class="container">
-                    <div class="box">
-                        <a href="https://metamask.io/">
-                            <img src="images/metamask-logo.png">
-                        </a>
-                        <h1> MetaMask </h1>
-                        <p> How to install MetaMask.io</p>
-                    </div>  
-
-                    <div class="box">
-                        <a href="https://en.wikipedia.org/wiki/Blockchain">
-                            <img src="images/z_bakugou1.gif">
-                        </a>
-                        <h1> Blockchain </h1>
-                        <p> This is what a blockchain is, it's cool</p>
-                    </div>
-
-                    <div class="box">
-                        <a href="https://ethereum.org/">
-                            <img src="images/Ethereum.png">
-                        </a>
-                        <h1> Ethereum </h1>
-                        <p> The project page for the Ethereum blockchain</p>
-                    </div>
-
-                    <div class="box">
-                        <a href="https://coinmarketcap.com/">
-                            <img src="images/z_zoe.gif">
-                        </a>
-                        <h1>Currency Rates</h1> 
-                        <p> The constant, everchanging numbers of cryptocurrency</p>
-                    </div>
-
-                    <div class="box">
-                        <a href="https://app.synapsefl.com">
-                            <img src="images/Synapse.png">
-                        </a>
-                        <h1> Synapse </h1>
-                        <p> This is a COOL PLACE with some AWESOME STUFF</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content"> 
-                <p></p>
-            </section>
-
-            <div class="slider">
-                <figure>
-                    <div class="slide">
-                        <img src="images/tracers.jpg">
-                    </div>
-                    <div class="slide">
-                        <img src="images/z_1.gif">
-                    </div>
-                    <div class="slide">
-                        <l> </l>
-                        <img src="images/naruto.jpg">
-                    </div>
-                    <div class="slide">
+            
+            <div class="container"> 
+                <section id="boxes">
+                    
+                        <div class="box">
+                            <a href="https://metamask.io/">
+                                <img src="images/metamask-logo.png">
+                            </a>
+                            <h1>MetaMask </h1>
+                            <p>How to install MetaMask.io</p>
+                        </div>
+                
+                        <div class="box">
+                            <a href="https://en.wikipedia.org/wiki/Blockchain">
+                                <img src="images/z_bakugou1.gif">
+                            </a>
+                            <h1>Blockchain </h1>
+                            <p>This is what a blockchain is, it's cool</p>
+                        </div>
+                
+                        <div class="box">
+                            <a href="https://ethereum.org/">
+                                <img src="images/Ethereum.png">
+                            </a>
+                            <h1>Ethereum </h1>
+                            <p>The project page for the Ethereum blockchain</p>
+                        </div>
+                
+                        <div class="box">
+                            <a href="https://coinmarketcap.com/">
+                                <img src="images/z_zoe.gif">
+                            </a>
+                            <h1>Currency Rates</h1>
+                            <p>The constant, everchanging numbers of cryptocurrency</p>
+                        </div>
+                
+                        <div class="box">
+                            <a href="https://app.synapsefl.com">
+                                <img src="images/Synapse.png">
+                            </a>
+                            <h1>Synapse</h1>
+                            <p>This is a COOL PLACE with some AWESOME STUFF</p>
+                        </div>
+                    
+                </section>
+            </div>
+        
+            <div class='container'>
+                <div class="slider">
+                    <figure>
+                        <div class="slide">
+                            <img src="images/tracers.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="images/z_1.gif">
+                        </div>
+                        <div class="slide">
+                            <l> </l>
+                            <img src="images/naruto.jpg">
+                        </div>
+                        <div class="slide">
                             <img src="images/z_mood.gif">
                         </div>
                         <div class="slide">
                             <img src="images/lover.jpg">
                         </div>
-                </figure>
+                    </figure>
+                </div>
             </div>
 
-            <section id="spacer"></section>
-                
-            <section class="section_spacer" id="analyticsspace"></section>  
-                
-            <section id="analytics">
-                <p>  ANALYTICS, but good lord IDK what we want to write here. 
+            <section id="analytics" class='container'>
+                <h1>ANALYTICS: </h1>
+                <p> Graphs hopefully to track the stats
                     <img src="images/z_idk.gif">
                 </p>
             </section>
-                
-            <section class="section_spacer" id="aboutspace"></section>
-
-            <section id="about"> 
-                <p>  
-                    ABOUT: 
-                    hi, so im not really sure, i think this is supposed
-                        to be something about health but im really not sure
-                        if im being totally honest. I just like anime. 
-                    
+            
+            <section id="about" class='container'>
+                <h1>ABOUT: </h1>
+                <p>
+                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way. Our
                     <img src="images/z_zoe.gif">
                 </p>
             </section>
-
-            <section class="section_spacer" id="teamspace"></section>
-
-            <section id="team"> 
-                <p>  
-                TEAM: 
-                so this team consists of 3 smart people and one not so smart person, we will leave it up
-                to you to decide which is which. </p>
-                <p>
-                    <img src="images/im not sure.png" style="width:900px;">
-                </p>
-                <p> KYLE: </p>
-                <p>
-                    <img src="images/z_kyle.gif">
-                </p>
-                <p> LINA: </p>
-                <p>
-                    <img src="images/z_lina.gif">
-                </p>
-                <p> QUINN: </p>
-                <p>
-                    <img src="images/z_quinn2.gif">
-                </p>
-                <p> ZOE: </p>
-                <p>
-                    <img src="images/z_zoe2.gif">
-                </p>
+            
+            <section id="team">
+                <div class="container">
+                    <h1>TEAM: </h1>
+                    <p>
+                        so this team consists of 3 smart people and one not so smart person, we will leave it up to you to decide which is which. </p>
+                    <div class="box">
+                        <a href="https://www.linkedin.com/in/kyle-thomas-755131a4/">
+                            <img src="images/kyle_about.png">
+                        </a>
+                        <h1> Kyle </h1>
+                        <p> Team Lead - Backend/Smart Contract Developer</p>
+                    </div>
+            
+                    <div class="box">
+                        <a href="https://www.linkedin.com/in/lina-brihoum-b81572100/">
+                            <img src="images/lina_about.jpg">
+                        </a>
+                        <h1> Lina </h1>
+                        <p> Team Driver - Front End/Functionality Developer </p>
+                    </div>
+            
+                    <div class="box">
+                        <a href="https://www.linkedin.com/in/zoe-sewell-84065a141/">
+                            <img src="images/z_zoe2.gif">
+                        </a>
+                        <h1> Zoe </h1>
+                        <p> Creativity Director - Front End Developer/Designer</p>
+                    </div>
+            
+                    <div class="box">
+                        <a href="https://www.linkedin.com/in/quinn-donoho-9ba34215a/">
+                            <img src="images/quinn_about.JPG">
+                        </a>
+                        <h1>Quinn</h1>
+                        <p> Smart Devices Coordinator - Backend/Functionality Developer</p>
+                    </div>
+                    <p>
+                        <img src="images/im not sure.png" style="width:900px;">
+                    </p>
+                </div>
+            </section>
+            
+            <section id='account' class='container'>
+                <h1>Account Info-</h1>
+                <p id='blockNum'></p>
+                <p id='accountNumber'></p>
+                <p id='accountBalance'></p>
             </section>
 
-            <section class="section_spacer"></section>
+    </main>
+    
+    <footer id="footer">
+        <a href="#home" class="active">home</a>
+        <a href="#other">other button</a>
+    </footer>
 
-            <h1>Account Info-</h1>
-            <p id = 'blockNum'>
-                <script> 
-                    getBlockNum();
-                </script>
-            </p>
-            <p id = 'accountBalance'>
-                <script type="text/javascript">
-                    getBalance();
-                </script>
+	<!-- Libraries -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-            </p>
+	<!-- Scripts -->
+    <script src="script/index.js"></script>
 
-            <section class="section_spacer"></section>
+	<!-- Inline Script -->
+	<script>
 
-            <div class="navbar">
-                <a href="#home" class="active">home</a>
-                <!-- im not sure what other buttons we will need here so have this -->
-                <a href="#other"> other button</a>
-            </div>
-        </div> <!-- div for navigation-->
+        "use strict";
+
+        $(document).ready(function(event) {
+            // <h1><a href="#" id="#blobchainAnchor">BLOBCHAIN</a></h1>
+            // <a href="#" id="#analyticsAnchor">ANALYTICS</a>
+            // <a href="#" id="#aboutAnchor">ABOUT</a>
+            // <a href="#" id="#teamAnchor">TEAM</a>
+            // <a href="#" id="#accountAnchor">ACCOUNT</a>
+
+            $("#blobchainAnchor").on("click", function(event) {
+                event.preventDefault();
+
+                document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            $("#analyticsAnchor").on("click", function(event) {
+                event.preventDefault();
+
+                document.getElementById("analytics").scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            $("#aboutAnchor").on("click", function(event) {
+                event.preventDefault();
+
+                document.getElementById("about").scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            $("#teamAnchor").on("click", function(event) {
+                event.preventDefault();
+
+                document.getElementById("team").scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            $("#accountAnchor").on("click", function(event) {
+                event.preventDefault();
+
+                document.getElementById("account").scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            setup();
+
+        });
+
+    </script>
+
 </body>
 </html>
