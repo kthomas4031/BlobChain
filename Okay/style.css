@@ -1,9 +1,15 @@
 header
 {
-    position:fixed;
-    text-align:right;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 50px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: .6s;
     background: rgba(0, 0, 0, 0.8);
+
 }
 
 header a:hover
@@ -11,8 +17,53 @@ header a:hover
     color: #FFFFFF;
 }
 
+/* The navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: .6s;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color: #FFFFFF;
+    color: #7B00C6;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: #7B00C6;
+    color: white;
+}
+
 body {
-    background: url(images/background.jpg);
+    font-family: Roboto;
+    background: url(images/background2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#spacer 
+{
+    height: 30px;
+    background: url(images/background2.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,6 +151,7 @@ footer
     margin: auto;
     overflow: hidden;
     text-align: center;
+    display: block;
 }
 
 #boxes
@@ -136,7 +188,7 @@ footer
 slider
 {
     overflow: hidden;
-    height: 300px;
+    height: 400px;
 }
 
 .slider figure div
@@ -156,19 +208,6 @@ slider
     width: 500%;
     margin: 0;
     animation: 30s slidy infinite;
-}
-
-
-/* Change the color of links on hover */
-.navbar a:hover {
-    background-color: #FFFFFF;
-    color: #7B00C6;
-}
-
-/* Add a color to the active/current link */
-.navbar a.active {
-    background-color: #7B00C6;
-    color: white;
 }
 
 #team .box
@@ -248,23 +287,4 @@ h100 {
     background-size: cover;
 }
 
-#spacer 
-{
-    height: 30px;
-    background: url(images/galaxy4k_2.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-#spacer 
-{
-    height: 30px;
-    background: url(images/galaxy4k_2.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}

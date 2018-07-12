@@ -21,15 +21,14 @@
 
 </head>
 <body>
-
-	<header id="header">
-		<h1><a href="#" id="blobchainAnchor">BLOBCHAIN</a></h1>
-		<a href="#" id="analyticsAnchor">ANALYTICS</a>
-        <a href="#" id="aboutAnchor">ABOUT</a>
-        <a href="#" id="teamAnchor">TEAM</a>
-        <a href="#" id="accountAnchor">ACCOUNT</a>
-        
-	</header>
+<div id = "page-wrap">
+    <div class="navbar">
+		<a href="#" id="blobchainAnchor"><b>HOME</b></a>
+		<a href="#" id="analyticsAnchor"><b>ANALYTICS</b></a>
+        <a href="#" id="aboutAnchor"><b>ABOUT</b></a>
+        <a href="#" id="teamAnchor"><b>TEAM</b></a>
+        <a href="#" id="accountAnchor"><b>ACCOUNT</b></a>
+	</div>
 
 	<main id="main" class="wrapper">
 
@@ -45,6 +44,8 @@
                     <button type="submit" class="button">enter</button>
                 </form>
             </section>
+
+            <section id="spacer"></section>
             
             <div class="container"> 
                 <section id="boxes">
@@ -88,11 +89,22 @@
                             <h1>Synapse</h1>
                             <p>This is a COOL PLACE with some AWESOME STUFF</p>
                         </div>
+
+                        <div class="box">
+                                <a href="http://bokunoheroacademia.wikia.com/wiki/Katsuki_Bakugo">
+                                    <img src="images/favorite bakugou.gif">
+                                </a>
+                                <h1>Bakubae</h1>
+                                <p>look at this high level best boy</p>
+                            </div>
+
                 </section>
             </div>
+
             <section id="spacer"></section>
         
-            <div class='container'>
+            <!--
+            <div class="container">
                 <div class="slider">
                     <figure>
                         <div class="slide">
@@ -114,6 +126,8 @@
                     </figure>
                 </div>
             </div>
+-->
+
             <section id="spacer"></section>
 
             <section id="analytics" class='container'>
@@ -124,6 +138,7 @@
                     <img src="images/z_idk.gif">
                 </p>
             </section>
+            
             <section id="spacer"></section>
             
             <section id="about" class='container'>
@@ -135,6 +150,7 @@
                     <img src="images/z_zoe.gif">
                 </p>
             </section>
+
             <section id="spacer"></section>
             
             <section id="team">
@@ -199,7 +215,8 @@
     </footer>
 
 	<!-- Libraries -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/jso/dist/jso.js%22%3E"></script>
 
 	<!-- Scripts -->
     <script src="script/index.js"></script>
@@ -251,6 +268,6 @@
         });
 
     </script>
-
+</div>
 </body>
 </html>
