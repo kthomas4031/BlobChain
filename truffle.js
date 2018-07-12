@@ -23,7 +23,7 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: "4",
-      from: "", //MY ACCOUNT WILL GO HERE WHEN I MAKE IT WITH GETH
+      from: "0x6f2e594c56b61d1fe3febfcdcf5e9080cd1641ea",
       gas: 2000000
     }
   }

@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
-        <script src="http://raw.githubusercontent.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
         <script src='script/setup.js'></script>
         <script type="text/javascript">
             $(window).on('scroll', function() {
@@ -21,9 +20,7 @@
                 // Check if Web3 has been injected by the browser:
                 if (typeof web3 !== 'undefined') {
                     // You have a web3 browser! Continue below!
-                    web3 = new Web3(web3.currentProvider); 
-                    console.log(web3.eth.accounts);
-                    var account = web3.eth.accounts[0];
+                    setup();
                 } else {
                     // Warn the user that they need to get a web3 browser
                     alert("Please Install MetaMask.io");                    
@@ -185,21 +182,14 @@
             <section class="section_spacer"></section>
 
             <h1>Account Info-</h1>
-            <p>Latest Block:
-                <script>
-                    web3.eth.getBlockNumber(function callback(error, result){
-                        if(!error)
-                            //document.write(result);
-                        else
-                            console.error(error);
-                    });
+            <p id = 'blockNum'>
+                <script> 
+                    getBlockNum();
                 </script>
             </p>
-            <p>Account Balance:
+            <p id = 'accountBalance'>
                 <script type="text/javascript">
-                    let balance = web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]).toNumber, 'ether');
-                    document.write('[' + account + ']<br><br>')
-                    document.write(balance + 'Ether');
+                    getBalance();
                 </script>
 
             </p>
