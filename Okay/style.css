@@ -157,22 +157,22 @@ footer
 
 #boxes
 {
-    margin-left: 225px;
-    margin-right: 200px;
+    margin-left: 15%;
+    margin-right: 0%;
 }
 
 #boxes .box
 {
     float: right;
     text-align: center;
-    width: 31%;
+    width: 30%;
     padding: 10px;
 }
 
 #boxes .box img
 {
-    width: 90px;
-    height: 80px;
+    width: 60%;
+    height: auto;
 }
 
 /* l
