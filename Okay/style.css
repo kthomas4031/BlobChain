@@ -34,6 +34,7 @@ header a:hover
     float: left;
     display: block;
     color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -156,14 +157,15 @@ footer
 
 #boxes
 {
-    margin-top: 20px;
+    margin-left: 225px;
+    margin-right: 200px;
 }
 
 #boxes .box
 {
-    float: left;
+    float: right;
     text-align: center;
-    width: 30%;
+    width: 31%;
     padding: 10px;
 }
 
