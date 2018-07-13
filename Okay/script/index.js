@@ -1,7 +1,7 @@
 var account;
 const analyticsContractABI = [ {"constant": false, "inputs": [ { "name": "victim", "type": "address"} ], "name": "deleteUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "constant": false, "inputs": [ { "name": "steps", "type": "uint256" } ], "name": "updateSteps", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "weight", "type": "uint256" } ], "name": "updateWeight", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getSteps", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getUserName", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getWeight", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" } ];
 const contractAddress = `0xb4a75a8445735fcfb9a39181f0700578bc7e37b5`;
-
+var analyticsContractInstance;
 
 function setup(){
     if (typeof web3 !== 'undefined') {
@@ -9,7 +9,7 @@ function setup(){
         web3js = new Web3(web3.currentProvider);
       } else {
         alert('Install MetaMask for proper site functionality');
-        // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+        // fallback 
         web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       }
     console.log(web3.eth.accounts);
@@ -19,10 +19,8 @@ function setup(){
     document.getElementById('accountNumber').innerHTML = 'Account Number: ' + account;
     
     const analyticsContract = web3.eth.contract(analyticsContractABI);
-    var analyticsContractInstance = analyticsContract.at(contractAddress);
-    if (analyticsContractInstance.getUserName(account) !== undefined){
-        document.getElementById('username').innerHTML = 'Welcome ' + analyticsContractInstance.getUserName(account);
-    }    
+    analyticsContractInstance = analyticsContract.at(contractAddress);
+    getUserName();
 }
 
 function getBlockNum(){
@@ -55,3 +53,34 @@ function getData(){
     var devicesArray = analyticsContractInstance.getDevices(account);
 }
 
+function getUserName(){
+    analyticsContractInstance.getUserName(account, function(error, result){
+        if(!error)
+            document.getElementById('username').innerHTML = 'Welcome ' + result;
+        else
+            console.error(error);
+    });    
+}
+
+function sendUsername(){
+    if(document.getElementById('usernameField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('usernameField').value);
+    else
+        console.log("Please Enter a Username before clicking this Button.");
+}
+
+// function sendSteps(){
+
+// }
+// function sendWeight(){
+
+// }
+// function sendHeartRate(){
+
+// }
+// function sendCalories(){
+
+// }
+// function sendDevice(){
+
+// }

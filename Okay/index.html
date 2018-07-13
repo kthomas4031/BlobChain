@@ -40,8 +40,8 @@
             <section id="username">
                 <h1>please enter your username</h1>
                 <form>
-                    <input type="text" placeholder="enter username...">
-                    <button type="submit" class="button">enter</button>
+                    <input id="usernameField" type="text" placeholder="enter username...">
+                    <button type="submit" class="button" onclick="sendUsername()">enter</button>
                 </form>
             </section>
 
@@ -214,6 +214,7 @@
 	<!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/jso/dist/jso.js"></script> <!--Quinn, not sure why but I had to remove the %22%3E for this to work -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script> <!--For creating line graphs of the data-->
 
 	<!-- Scripts -->
     <script src="script/index.js"></script>
