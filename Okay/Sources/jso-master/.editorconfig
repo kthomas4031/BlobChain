@@ -1,0 +1,6 @@
+[*.{js,jsx}]
+indent_style = space
+indent_size = 2
+response_type: 'code',
+	client_secret: "xxxxx-xxxx-xxx-xxx",
+	token: "https://auth.dataporten.no/oauth/token",

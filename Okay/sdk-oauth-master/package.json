@@ -1,0 +1,20 @@
+{
+  "fitbit": {
+    "appType": "app",
+    "appDisplayName": "OAuth Example",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffeb3b",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "OAuth Example"
+      }
+    }
+  }
+}
