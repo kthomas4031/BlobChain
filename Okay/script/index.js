@@ -69,18 +69,33 @@ function sendUsername(){
         console.log("Please Enter a Username before clicking this Button.");
 }
 
-// function sendSteps(){
-
-// }
-// function sendWeight(){
-
-// }
-// function sendHeartRate(){
-
-// }
-// function sendCalories(){
-
-// }
-// function sendDevice(){
-
-// }
+function sendSteps(){
+    if(document.getElementById('stepField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('stepField').value);
+    else
+        console.log("Please Enter a Step Number before clicking this Button.");
+}
+function sendWeight(){
+    if(document.getElementById('weightField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('weightField').value);
+    else
+        console.log("Please Enter a Username before clicking this Button.");
+}
+function sendHeartRate(){
+    if(document.getElementById('heartrateField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('heartrateField').value);
+    else
+        console.log("Please Enter a Username before clicking this Button.");
+}
+function sendCalories(){
+    if(document.getElementById('calorieField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('calorieField').value);
+    else
+        console.log("Please Enter a Username before clicking this Button.");
+}
+function sendDevice(){
+    if(document.getElementById('stepField').value !== undefined)
+        analyticsContractInstance.updateUserName(document.getElementById('stepField').value);
+    else
+        console.log("Please Enter a Username before clicking this Button.");
+}
