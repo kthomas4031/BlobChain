@@ -3,10 +3,10 @@ pragma solidity ^0.4.24;
 contract Analytics {
     //Struct keeps all the data for the client
     struct Record{
-        string userName;
+        bytes32 userName;
         string[] devices;
         uint[] stepsTaken;
-        uint[] currentWeight;
+        uint currentWeight;
         uint[] heartRate;
         uint[] calorieIntake;
     }
@@ -16,93 +16,63 @@ contract Analytics {
     //Constructor(Called when I deploy the contract)
     constructor() public {
         ownerAdmin = msg.sender;
-        records[ownerAdmin].userName = "Admin Kyle";
-        records[ownerAdmin].stepsTaken[0] = 1337000;
-        records[ownerAdmin].currentWeight[0] = 168;
-        records[ownerAdmin].heartRate[0] = 78;
-        records[ownerAdmin].calorieIntake[0] = 2670;
     }
-
-    //add the "only admin" modifier to any dangerous functions
-    modifier onlyAdmin() {
-        require(msg.sender == ownerAdmin);
-        _;
-    }
-    //Emergency "removal" of user doing something bad (NOTE: Does not actually block the user. For now.)
-    function deleteUser(address victim) public onlyAdmin{
-        delete records[victim];
-    }
-
-    function createUserName(string name) public {
+    
+    function createUserName(bytes32 name) public {
         records[msg.sender].userName = name;
     }
 
     //Send the info provided (buttons for each different stat)
     function updateSteps(uint steps) public {
-        records[msg.sender].stepsTaken.length += 1;
-        records[msg.sender].stepsTaken[records[msg.sender].stepsTaken.length] = steps;
+        records[msg.sender].stepsTaken.push(steps);
     }
     function updateWeight(uint weight) public {
-        records[msg.sender].currentWeight.length += 1;
-        records[msg.sender].currentWeight[records[msg.sender].currentWeight.length] = weight;
+        records[msg.sender].currentWeight = weight;
     }
     function updateHeartRate(uint rate) public {
-        records[msg.sender].heartRate.length += 1;
-        records[msg.sender].heartRate[records[msg.sender].heartRate.length] = rate;
+        records[msg.sender].heartRate.push(rate);
     }
     function updateCalories(uint calories) public {
-        records[msg.sender].calorieIntake.length += 1;
-        records[msg.sender].calorieIntake[records[msg.sender].calorieIntake.length] = calories;
+        records[msg.sender].calorieIntake.push(calories);
     }
     function updateDevices(string device) public {
-        records[msg.sender].devices.length += 1;
-        records[msg.sender].devices[records[msg.sender].devices.length] = device;
+        records[msg.sender].devices.push(device);
     }
 
-    function strConcatenation(string _a, string _b, string _c, string _d, string _e) internal pure returns (string){
-        bytes memory _ba = bytes(_a);
-        bytes memory _bb = bytes(_b);
-        bytes memory _bc = bytes(_c);
-        bytes memory _bd = bytes(_d);
-        bytes memory _be = bytes(_e);
+    function strConcatenation(string _a, string _b) internal pure returns (string){
+        bytes memory _bytesa = bytes(_a);
+        bytes memory _bytesb = bytes(_b);
 
-        string memory abcde = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length);
-        bytes memory babcde = bytes(abcde);
+        string memory allocationSize = new string(_bytesa.length + _bytesb.length);
+        bytes memory combinedString = bytes(allocationSize);
         uint k = 0;
 
-        for (uint i = 0; i < _ba.length; i++) babcde[k++] = _ba[i];
-        for (i = 0; i < _bb.length; i++) babcde[k++] = _bb[i];
-        for (i = 0; i < _bc.length; i++) babcde[k++] = _bc[i];
-        for (i = 0; i < _bd.length; i++) babcde[k++] = _bd[i];
-        for (i = 0; i < _be.length; i++) babcde[k++] = _be[i];
+        for (uint i = 0; i < _bytesa.length; i++) combinedString[k++] = _bytesa[i];
+        for (i = 0; i < _bytesb.length; i++) combinedString[k++] = _bytesb[i];
 
-        return string(babcde);
-    }
-
-    function strConcat(string _a, string _b) pure internal returns (string) {
-        return strConcatenation(_a, _b, " ", " ", " ");
+        return string(combinedString);
     }
 
     //When the website opens, call these to display user's data
-    function getUserName(address sender) public view returns(string){
-        return records[sender].userName;
+    function getUserName() public view returns(bytes32){
+        return records[msg.sender].userName;
     }
-    function getSteps(address sender) public view returns(uint[]){
-        return records[sender].stepsTaken;
+    function getSteps() public view returns(uint[]){
+        return records[msg.sender].stepsTaken;
     }
-    function getWeight(address sender) public view returns(uint[]){
-        return records[sender].currentWeight;
+    function getWeight() public view returns(uint){
+        return records[msg.sender].currentWeight;
     }
-    function getHeartRate(address sender) public view returns(uint[]){
-        return records[sender].heartRate;
+    function getHeartRate() public view returns(uint[]){
+        return records[msg.sender].heartRate;
     }
-    function getCalories(address sender) public view returns(uint[]){
-        return records[sender].calorieIntake;
+    function getCalories() public view returns(uint[]){
+        return records[msg.sender].calorieIntake;
     }
-    function getDevices(address sender) public view returns(string){
+    function getDevices() public view returns(string){
         string memory result = "";
-        for (uint i = 0; i < records[sender].devices.length; i++) {
-            result = strConcat(result, records[sender].devices[i]);
+        for (uint i = 0; i < records[msg.sender].devices.length; i++) {
+            result = strConcatenation(result, records[msg.sender].devices[i]);
         }
         return result;
     }

@@ -40,7 +40,7 @@
             <section id="username">
                 <h1>please enter your username</h1>
                 <form>
-                    <input id="usernameField" type="text" placeholder="enter username...">
+                    <input id="usernameField" type="text" maxlength= "32" placeholder="enter username...">
                     <button type="submit" class="button" onclick="sendUsername()">enter</button>
                 </form>
             </section>
@@ -96,34 +96,8 @@
                         <p>look at this high level best boy</p>
                 </div>
             </section>
-            
 
             <section id="spacer"></section>
-        
-            <!--
-            <div class="container">
-                <div class="slider">
-                    <figure>
-                        <div class="slide">
-                            <img src="images/tracers.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="images/z_1.gif">
-                        </div>
-                        <div class="slide">
-                            <l> </l>
-                            <img src="images/naruto.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="images/z_mood.gif">
-                        </div>
-                        <div class="slide">
-                            <img src="images/lover.jpg">
-                        </div>
-                    </figure>
-                </div>
-            </div>
--->
 
             <section id="spacer"></section>
 
@@ -134,6 +108,53 @@
                 <p> Graphs hopefully to track the stats
                     <img src="images/z_idk.gif">
                 </p>
+            </section>
+
+            <section id="spacer"></section>
+
+            <section id='account' class='container'>
+                <div class="h100container">
+                    <font color="white"> <h100>Account Info</h100> </font>
+                </div>
+
+                <p></p>
+
+                <form>
+                    <input id="stepField" type="number" placeholder="enter steps...">
+                    <button type="submit" class="button" onclick="sendSteps()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="weightField" type="number" placeholder="enter weight...">
+                    <button type="submit" class="button" onclick="sendWeight()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="calorieField" type="number" placeholder="enter calories...">
+                    <button type="submit" class="button" onclick="sendCalories()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="heartrateField" type="number" placeholder="enter heartrate...">
+                    <button type="submit" class="button" onclick="sendHeartrate()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
+                    <button type="submit" class="button" onclick="sendUsername()">new device? </button>
+                </form>
+
+                <p id='blockNum'></p>
+                <p id='accountNumber'></p>
+                <p id='accountBalance'></p>
             </section>
             
             <section id="spacer"></section>
@@ -194,53 +215,6 @@
                 </div>
             </section>
             <section id="spacer"></section>
-            
-
-            <section id='account' class='container'>
-                <div class="h100container">
-                    <font color="white"> <h100>Account Info</h100> </font>
-                </div>
-
-                <p></p>
-
-                <form>
-                    <input id="stepField" type="text" placeholder="enter steps...">
-                    <button type="submit" class="button" onclick="sendSteps()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="weightField" type="text" placeholder="enter weight...">
-                    <button type="submit" class="button" onclick="sendWeight()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="calorieField" type="text" placeholder="enter calories...">
-                    <button type="submit" class="button" onclick="sendCalories()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="heartrateField" type="text" placeholder="enter heartrate...">
-                    <button type="submit" class="button" onclick="sendHeartrate()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
-                    <button type="submit" class="button" onclick="sendUsername()">new device? </button>
-                </form>
-
-                <p id='blockNum'></p>
-                <p id='accountNumber'></p>
-                <p id='accountBalance'></p>
-            </section>
-
     </main>
     
     <footer id="footer">
