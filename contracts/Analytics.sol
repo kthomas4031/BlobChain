@@ -23,19 +23,19 @@ contract Analytics {
     }
 
     //Send the info provided (buttons for each different stat)
-    function updateSteps(uint steps) public {
+    function updateSteps(uint steps) public payable {
         records[msg.sender].stepsTaken.push(steps);
     }
-    function updateWeight(uint weight) public {
+    function updateWeight(uint weight) public payable {
         records[msg.sender].currentWeight = weight;
     }
-    function updateHeartRate(uint rate) public {
+    function updateHeartRate(uint rate) public payable {
         records[msg.sender].heartRate.push(rate);
     }
-    function updateCalories(uint calories) public {
+    function updateCalories(uint calories) public payable {
         records[msg.sender].calorieIntake.push(calories);
     }
-    function updateDevices(string device) public {
+    function updateDevices(string device) public payable {
         records[msg.sender].devices.push(device);
     }
 

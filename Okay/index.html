@@ -41,7 +41,7 @@
                 <h1>please enter your username</h1>
                 <form>
                     <input id="usernameField" type="text" maxlength= "32" placeholder="enter username...">
-                    <button type="submit" class="button" onclick="sendUsername()">enter</button>
+                    <button id= "userSubmit" type="submit" class="button">enter</button>
                 </form>
             </section>
 
@@ -120,28 +120,28 @@
                 <p></p>
 
                 <form>
-                    <input id="stepField" type="number" placeholder="enter steps...">
+                    <input id="stepField" type="number" min = "0" placeholder="enter steps...">
                     <button type="submit" class="button" onclick="sendSteps()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
-                    <input id="weightField" type="number" placeholder="enter weight...">
+                    <input id="weightField" type="number" min = "0" placeholder="enter weight...">
                     <button type="submit" class="button" onclick="sendWeight()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
-                    <input id="calorieField" type="number" placeholder="enter calories...">
+                    <input id="calorieField" type="number" min = "0" placeholder="enter calories...">
                     <button type="submit" class="button" onclick="sendCalories()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
-                    <input id="heartrateField" type="number" placeholder="enter heartrate...">
+                    <input id="heartrateField" type="number" min = "0" placeholder="enter heartrate...">
                     <button type="submit" class="button" onclick="sendHeartrate()">enter</button>
                 </form>
 
@@ -271,6 +271,10 @@
                 event.preventDefault();
 
                 document.getElementById("account").scrollIntoView({ block: 'start', behavior: 'smooth' });
+            });
+
+            $("#userSubmit").click(function() {
+                sendUsername();
             });
 
             setup();
