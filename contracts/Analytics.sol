@@ -2,15 +2,15 @@ pragma solidity ^0.4.24;
 
 contract Analytics {
     //Struct keeps all the data for the client
-    struct Record{
-        bytes32 userName;
+    struct Record {
+        string userName;
         string[] devices;
         uint[] stepsTaken;
         uint currentWeight;
         uint[] heartRate;
         uint[] calorieIntake;
     }
-    mapping (address => Record) records;
+    mapping (address => Record) public records;
     address private ownerAdmin;
 
     //Constructor(Called when I deploy the contract)
@@ -18,7 +18,7 @@ contract Analytics {
         ownerAdmin = msg.sender;
     }
     
-    function createUserName(bytes32 name) public {
+    function createUserName(string name) public {
         records[msg.sender].userName = name;
     }
 
@@ -54,25 +54,25 @@ contract Analytics {
     }
 
     //When the website opens, call these to display user's data
-    function getUserName() public view returns(bytes32){
-        return records[msg.sender].userName;
+    function getUserName(address requested) public view returns(string){
+        return records[requested].userName;
     }
-    function getSteps() public view returns(uint[]){
-        return records[msg.sender].stepsTaken;
+    function getSteps(address requested) public view returns(uint[]){
+        return records[requested].stepsTaken;
     }
-    function getWeight() public view returns(uint){
-        return records[msg.sender].currentWeight;
+    function getWeight(address requested) public view returns(uint){
+        return records[requested].currentWeight;
     }
-    function getHeartRate() public view returns(uint[]){
-        return records[msg.sender].heartRate;
+    function getHeartRate(address requested) public view returns(uint[]){
+        return records[requested].heartRate;
     }
-    function getCalories() public view returns(uint[]){
-        return records[msg.sender].calorieIntake;
+    function getCalories(address requested) public view returns(uint[]){
+        return records[requested].calorieIntake;
     }
-    function getDevices() public view returns(string){
+    function getDevices(address requested) public view returns(string){
         string memory result = "";
-        for (uint i = 0; i < records[msg.sender].devices.length; i++) {
-            result = strConcatenation(result, records[msg.sender].devices[i]);
+        for (uint i = 0; i < records[requested].devices.length; i++) {
+            result = strConcatenation(result, records[requested].devices[i]);
         }
         return result;
     }

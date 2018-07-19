@@ -38,16 +38,19 @@
         </section>
             
             <section id="username">
-                <h1>please enter your username</h1>
+                <h1 id="usernameDisplay">please enter your username</h1>
                 <form>
                     <input id="usernameField" type="text" maxlength= "32" placeholder="enter username...">
-                    <button id= "userSubmit" type="submit" class="button">enter</button>
+                    <button id= "userSubmit" type="button" class="button">enter</button>
                 </form>
             </section>
 
             <section id="spacer"></section>
             
             <section id="boxes" class='container'>
+                    <div class="h100container">
+                            <font color="white"> <h100> Useful Links: </h100> </font>
+                        </div>
                 <div class="box">
                     <a href="https://metamask.io/">
                         <img src="images/metamask-logo.png">
@@ -61,7 +64,7 @@
                         <img src="images/z_bakugou1.gif">
                     </a>
                     <h1>Blockchain </h1>
-                    <p>This is what a blockchain is, it's cool</p>
+                    <p>This is what a blockchain is</p>
                 </div>
         
                 <div class="box">
@@ -85,7 +88,7 @@
                         <img src="images/Synapse.png">
                     </a>
                     <h1>Synapse</h1>
-                    <p>This is a COOL PLACE with some AWESOME STUFF</p>
+                    <p>This is a COOL PLACE with some AWESOME challenges</p>
                 </div>
 
                 <div class="box">
@@ -93,7 +96,7 @@
                             <img src="images/favorite bakugou.gif">
                         </a>
                         <h1>Bakubae</h1>
-                        <p>look at this high level best boy</p>
+                        <p>look at this high level best boy ZOE PLEASE</p>
                 </div>
             </section>
 
@@ -105,52 +108,55 @@
                 <div class="h100container">
                     <font color="white"> <h100> ANALYTICS: </h100> </font>
                 </div>
-                <p> Graphs hopefully to track the stats
+
+                <p> Graphs to track the stats LIIIINA <!--LINA PLEASE -->
                     <img src="images/z_idk.gif">
                 </p>
+
+                <p id="weightTest"> weight here</p>
             </section>
 
             <section id="spacer"></section>
 
             <section id='account' class='container'>
                 <div class="h100container">
-                    <font color="white"> <h100>Account Info</h100> </font>
+                    <font color="white"> <h100>Update Data</h100> </font>
                 </div>
 
                 <p></p>
 
                 <form>
                     <input id="stepField" type="number" min = "0" placeholder="enter steps...">
-                    <button type="submit" class="button" onclick="sendSteps()">enter</button>
+                    <button type="button" class="button" onclick="sendSteps()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
                     <input id="weightField" type="number" min = "0" placeholder="enter weight...">
-                    <button type="submit" class="button" onclick="sendWeight()">enter</button>
+                    <button type="button" class="button" onclick="sendWeight()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
                     <input id="calorieField" type="number" min = "0" placeholder="enter calories...">
-                    <button type="submit" class="button" onclick="sendCalories()">enter</button>
+                    <button type="button" class="button" onclick="sendCalories()">enter</button>
                 </form>
 
                 <p></p>
 
                 <form>
                     <input id="heartrateField" type="number" min = "0" placeholder="enter heartrate...">
-                    <button type="submit" class="button" onclick="sendHeartrate()">enter</button>
+                    <button type="button" class="button" onclick="sendHeartrate()">enter</button>
                 </form>
 
                 <p></p>
 
-                <form>
+                <!-- <form> -->
                     <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
-                    <button type="submit" class="button" onclick="sendUsername()">new device? </button>
-                </form>
+                    <!-- <button type="button" class="button" onclick="sendUsername()">new device? </button> -->
+                <!-- </form> -->
 
                 <p id='blockNum'></p>
                 <p id='accountNumber'></p>
@@ -164,7 +170,11 @@
                         <font color="white"> <h100> ABOUT: </h100> </font>
                     </div>
                 <p>
-                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way. Our
+                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way.
+                    Our desire is to see people inspired by our app to increase their activity levels and better monitor their health habits. We find that when you're shown
+                    your own statistics, you're automatically driven to make them better (like in a videogame). So for all of our users: Get out there, get going, and stay strong.
+                </p>
+                <p>
                     <img src="images/z_zoe.gif">
                 </p>
             </section>
@@ -177,7 +187,11 @@
                         <font color="white"> <h100> TEAM: </h100> </font>
                     </div>
                     <p>
-                        so this team consists of 4 amazingly smart people </p>
+                        This team consists of 4 amazingly smart students currently working towards their bachelor's degrees in Computer Science. They came together through
+                        being roommates, but more importantly through having the same awesome programming teacher, Dr. Dean Bushey (hence the group name). They came into 
+                        this with minimal knowledge of web design, and no knowledge of smart contracts or decentralized apps, and now here they are. With a moderately nice app
+                        that just has a few hiccups here and there.
+                    </p>
                     <div class="box">
                         <a href="https://www.linkedin.com/in/kyle-thomas-755131a4/">
                             <img src="images/kyle_about.jpg">
@@ -191,7 +205,7 @@
                             <img src="images/lina_about.jpg">
                         </a>
                         <h1> Lina </h1>
-                        <p> Team Driver - Front End Developer/Functionality Developer </p>
+                        <p> Team Driver - Front End/Functionality Developer </p>
                     </div>
             
                     <div class="box">
@@ -273,7 +287,9 @@
                 document.getElementById("account").scrollIntoView({ block: 'start', behavior: 'smooth' });
             });
 
-            $("#userSubmit").click(function() {
+            $("#userSubmit").on("click", function(event) {
+                event.preventDefault();
+
                 sendUsername();
             });
 

@@ -13,16 +13,13 @@ function setup(){
         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       }
     console.log(web3.eth.accounts);
-    web3.eth.defaultAccount = web3.eth.accounts[0];
     account = web3.eth.accounts[0];
-    getBlockNum();
-    getBalance();
     document.getElementById('accountNumber').innerHTML = 'Account Number: ' + account;
     
     const analyticsContract = web3.eth.contract(analyticsContractABI);
     analyticsContractInstance = analyticsContract.at(contractAddress);
     console.log(analyticsContractInstance);
-    getUserName();
+    getData();
 }
 
 function getBlockNum(){
@@ -48,56 +45,81 @@ function getBalance(){
 
 //Retrieves all the data and makes it global so it can be used outside this function
 function getData(){
-    var stepsTakenArray = web3.toDecimal(analyticsContractInstance.getSteps(account));
-    var weight = web3.toDecimal(analyticsContractInstance.getWeight(account));
-    var heartRateArray = web3.toDecimal(analyticsContractInstance.getHeartRate(account));
-    var caloricArray = web3.toDecimal(analyticsContractInstance.getCalories(account));
-    var devicesArray = web3.toDecimal(analyticsContractInstance.getDevices(account));
-}
+    getBlockNum();
+    getBalance();
 
-function getUserName(){
-    analyticsContractInstance.getUserName(account, function(error, result){
+    analyticsContractInstance.getWeight(function(error, result){
         if(!error)
-            document.getElementById('username').innerHTML = 'Welcome ' + web3Provider.toAscii(result);
+            document.getElementById('weightTest').innerHTML = "Current Weight: " + result;
+        else
+            console.error("Error: No Weight Found");
+    });
+
+    // var stepsTakenArray = web3.toDecimal(analyticsContractInstance.getSteps(account));
+    // var heartRateArray = web3.toDecimal(analyticsContractInstance.getHeartRate(account));
+    // var caloricArray = web3.toDecimal(analyticsContractInstance.getCalories(account));
+    // var devicesArray = web3.toDecimal(analyticsContractInstance.getDevices(account));
+
+    analyticsContractInstance.getUserName(account, function(error, result){
+        if(!error){
+            document.getElementById('usernameDisplay').innerHTML = 'Welcome ' + result;
+            document.getElementById('usernameField').parentNode.removeChild(document.getElementById('usernameField'));
+            document.getElementById('usernameSubmit').parentNode.removeChild(document.getElementById('usernameSubmit'));
+        }
         else
             console.error("Error: No Username Found");
-    });    
+    });  
 }
 
 function sendUsername(){
     if(document.getElementById('usernameField').value !== undefined)
-        analyticsContractInstance.updateUserName(web3.fromascii(document.getElementById('usernameField').value, 32));
+        analyticsContractInstance.createUserName(document.getElementById('usernameField').value, function(error,transactionHash){
+            if (error)
+                console.log(transactionHash);
+            });
     else
-        console.log("Please Enter a Username before clicking this Button.");
+        console.log("Please enter a Username before clicking this Button.");
 }
 
 function sendSteps(){
     if(document.getElementById('stepField').value !== undefined)
-        analyticsContractInstance.updateUserName(document.getElementById('stepField').value);
+        analyticsContractInstance.updateSteps(document.getElementById('stepField').value, function(error,transactionHash){
+            if (error)
+                console.log(transactionHash);
+            });
     else
-        console.log("Please Enter a Step Number before clicking this Button.");
+        console.log("Please enter Number of Steps before clicking this Button.");
 }
 function sendWeight(){
     if(document.getElementById('weightField').value !== undefined)
-        analyticsContractInstance.updateUserName(document.getElementById('weightField').value);
+        analyticsContractInstance.updateWeight(document.getElementById('weightField').value, function(error,transactionHash){
+            if (error)
+                console.log(transactionHash);
+            });
     else
-        console.log("Please Enter a Username before clicking this Button.");
+        console.log("Please enter a Weight before clicking this Button.");
 }
 function sendHeartRate(){
     if(document.getElementById('heartrateField').value !== undefined)
-        analyticsContractInstance.updateUserName(document.getElementById('heartrateField').value);
+        analyticsContractInstance.updateHeartRate(document.getElementById('heartrateField').value, function(error,transactionHash){
+            if (error)
+                console.log(transactionHash);
+            });
     else
-        console.log("Please Enter a Username before clicking this Button.");
+        console.log("Please enter a HeartRate before clicking this Button.");
 }
 function sendCalories(){
     if(document.getElementById('calorieField').value !== undefined)
-        analyticsContractInstance.updateUserName(document.getElementById('calorieField').value);
+        analyticsContractInstance.updateCalories(document.getElementById('calorieField').value, function(error,transactionHash){
+            if (error)
+                console.log(transactionHash);
+            });
     else
-        console.log("Please Enter a Username before clicking this Button.");
+        console.log("Please enter Calorie Intake before clicking this Button.");
 }
 function sendDevice(){
-    if(document.getElementById('stepField').value !== undefined)
-        analyticsContractInstance.updateUserName(document.getElementById('stepField').value);
-    else
-        console.log("Please Enter a Username before clicking this Button.");
+    // if(document.getElementById('stepField').value !== undefined)
+    //     analyticsContractInstance.updateDevices(document.getElementById('stepField').value);
+    // else
+    //     console.log("Please Enter a Device before clicking this Button.");
 }
