@@ -23,11 +23,11 @@
 <body>
 <div id = "page-wrap">
     <div class="navbar">
-		<a href="#" id="blobchainAnchor"><b>HOME</b></a>
+        <a href="#" id="blobchainAnchor"><b>HOME</b></a>
+        <a href="#" id="accountAnchor"><b>ACCOUNT</b></a>
 		<a href="#" id="analyticsAnchor"><b>ANALYTICS</b></a>
         <a href="#" id="aboutAnchor"><b>ABOUT</b></a>
         <a href="#" id="teamAnchor"><b>TEAM</b></a>
-        <a href="#" id="accountAnchor"><b>ACCOUNT</b></a>
 	</div>
 
 	<main id="main" class="wrapper">
@@ -38,19 +38,16 @@
         </section>
             
             <section id="username">
-                <h1 id="usernameDisplay">please enter your username</h1>
+                <h1>please enter your username</h1>
                 <form>
-                    <input id="usernameField" type="text" maxlength= "32" placeholder="enter username...">
-                    <button id= "userSubmit" type="button" class="button">enter</button>
+                    <input id="usernameField" type="text" placeholder="enter username...">
+                    <button type="submit" class="button" onclick="sendUsername()">enter</button>
                 </form>
             </section>
 
             <section id="spacer"></section>
             
             <section id="boxes" class='container'>
-                    <div class="h100container">
-                            <font color="white"> <h100> Useful Links: </h100> </font>
-                        </div>
                 <div class="box">
                     <a href="https://metamask.io/">
                         <img src="images/metamask-logo.png">
@@ -61,10 +58,10 @@
         
                 <div class="box">
                     <a href="https://en.wikipedia.org/wiki/Blockchain">
-                        <img src="images/z_bakugou1.gif">
+                        <img src="images/blockchainthing.jpg">
                     </a>
                     <h1>Blockchain </h1>
-                    <p>This is what a blockchain is</p>
+                    <p>This is what a blockchain is, it's cool</p>
                 </div>
         
                 <div class="box">
@@ -77,7 +74,7 @@
         
                 <div class="box">
                     <a href="https://coinmarketcap.com/">
-                        <img src="images/z_zoe.gif">
+                        <img src="images/bitcoin-exchange.jpg">
                     </a>
                     <h1>Currency Rates</h1>
                     <p>The constant, everchanging numbers of cryptocurrency</p>
@@ -88,19 +85,92 @@
                         <img src="images/Synapse.png">
                     </a>
                     <h1>Synapse</h1>
-                    <p>This is a COOL PLACE with some AWESOME challenges</p>
+                    <p>all-encompassing, interactive, and flexible methodology for building, facilitating, and exposing the Entrepreneurial Ecosystem of Florida.</p>
                 </div>
 
                 <div class="box">
-                        <a href="http://bokunoheroacademia.wikia.com/wiki/Katsuki_Bakugo">
-                            <img src="images/favorite bakugou.gif">
+                        <a href="https://bitcoin.org/en/">
+                            <img src="images/Bitcoin.png">
                         </a>
-                        <h1>Bakubae</h1>
-                        <p>look at this high level best boy ZOE PLEASE</p>
+                        <h1>Bitcoin</h1>
+                        <p>a type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds</p>
                 </div>
             </section>
 
             <section id="spacer"></section>
+            
+            <section id='account' class='container'>
+                <div class="h100container">
+                    <font color="white"> <h100>Account Info</h100> </font>
+                </div>
+
+                <p></p>
+
+                <form>
+                    <input id="stepField" type="text" placeholder="enter steps...">
+                    <button type="submit" class="button" onclick="sendSteps()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="weightField" type="text" placeholder="enter weight...">
+                    <button type="submit" class="button" onclick="sendWeight()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="calorieField" type="text" placeholder="enter calories...">
+                    <button type="submit" class="button" onclick="sendCalories()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <input id="heartrateField" type="text" placeholder="enter heartrate...">
+                    <button type="submit" class="button" onclick="sendHeartrate()">enter</button>
+                </form>
+
+                <p></p>
+
+                <form>
+                    <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
+                    <button type="submit" class="button" onclick="newDevice()">new device? </button>
+                </form>
+
+                <p id='blockNum'></p>
+                <p id='accountNumber'></p>
+                <p id='accountBalance'></p>
+            </section>
+
+
+
+
+            <!--
+            <div class="container">
+                <div class="slider">
+                    <figure>
+                        <div class="slide">
+                            <img src="images/tracers.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="images/z_1.gif">
+                        </div>
+                        <div class="slide">
+                            <l> </l>
+                            <img src="images/naruto.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="images/z_mood.gif">
+                        </div>
+                        <div class="slide">
+                            <img src="images/lover.jpg">
+                        </div>
+                    </figure>
+                </div>
+            </div>
+-->
 
             <section id="spacer"></section>
 
@@ -108,59 +178,9 @@
                 <div class="h100container">
                     <font color="white"> <h100> ANALYTICS: </h100> </font>
                 </div>
-
-                <p> Graphs to track the stats LIIIINA <!--LINA PLEASE -->
+                <p> Graphs hopefully to track the stats
                     <img src="images/z_idk.gif">
                 </p>
-
-                <p id="weightTest"> weight here</p>
-            </section>
-
-            <section id="spacer"></section>
-
-            <section id='account' class='container'>
-                <div class="h100container">
-                    <font color="white"> <h100>Update Data</h100> </font>
-                </div>
-
-                <p></p>
-
-                <form>
-                    <input id="stepField" type="number" min = "0" placeholder="enter steps...">
-                    <button type="button" class="button" onclick="sendSteps()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="weightField" type="number" min = "0" placeholder="enter weight...">
-                    <button type="button" class="button" onclick="sendWeight()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="calorieField" type="number" min = "0" placeholder="enter calories...">
-                    <button type="button" class="button" onclick="sendCalories()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="heartrateField" type="number" min = "0" placeholder="enter heartrate...">
-                    <button type="button" class="button" onclick="sendHeartrate()">enter</button>
-                </form>
-
-                <p></p>
-
-                <!-- <form> -->
-                    <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
-                    <!-- <button type="button" class="button" onclick="sendUsername()">new device? </button> -->
-                <!-- </form> -->
-
-                <p id='blockNum'></p>
-                <p id='accountNumber'></p>
-                <p id='accountBalance'></p>
             </section>
             
             <section id="spacer"></section>
@@ -170,31 +190,24 @@
                         <font color="white"> <h100> ABOUT: </h100> </font>
                     </div>
                 <p>
-                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way.
-                    Our desire is to see people inspired by our app to increase their activity levels and better monitor their health habits. We find that when you're shown
-                    your own statistics, you're automatically driven to make them better (like in a videogame). So for all of our users: Get out there, get going, and stay strong.
-                </p>
-                <p>
+                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way. Our
                     <img src="images/z_zoe.gif">
                 </p>
             </section>
 
             <section id="spacer"></section>
             
+
             <section id="team">
                 <div class="container">
                     <div class="h100container">
                         <font color="white"> <h100> TEAM: </h100> </font>
                     </div>
                     <p>
-                        This team consists of 4 amazingly smart students currently working towards their bachelor's degrees in Computer Science. They came together through
-                        being roommates, but more importantly through having the same awesome programming teacher, Dr. Dean Bushey (hence the group name). They came into 
-                        this with minimal knowledge of web design, and no knowledge of smart contracts or decentralized apps, and now here they are. With a moderately nice app
-                        that just has a few hiccups here and there.
-                    </p>
+                        so this team consists of 4 super cool people</p>
                     <div class="box">
                         <a href="https://www.linkedin.com/in/kyle-thomas-755131a4/">
-                            <img src="images/kyle_about.jpg">
+                            <img src="images/kyle_about2.jpg">
                         </a>
                         <h1> Kyle </h1>
                         <p> Team Lead - Backend/Smart Contract Developer</p>
@@ -205,12 +218,12 @@
                             <img src="images/lina_about.jpg">
                         </a>
                         <h1> Lina </h1>
-                        <p> Team Driver - Front End/Functionality Developer </p>
+                        <p> Team Driver - Front End Developer/Functionality Developer </p>
                     </div>
             
                     <div class="box">
                         <a href="https://www.linkedin.com/in/zoe-sewell-84065a141/">
-                            <img src="images/z_zoe2.gif">
+                            <img src="images/zoeface2.jpg">
                         </a>
                         <h1> Zoe </h1>
                         <p> Creativity Director - Front End Developer/Designer</p>
@@ -229,21 +242,21 @@
                 </div>
             </section>
             <section id="spacer"></section>
+
     </main>
     
     <footer id="footer">
-        <a href="#home" class="active">home</a>
-        <a href="fetchSleepData()">other button</a>
+        <a href="#" id="blobchainAnchor">home</a>
+        <a href="#other">other button</a>
     </footer>
 
 	<!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/jso/dist/jso.js"></script> <!--Quinn, not sure why but I had to remove the %22%3E off the end for this to work -->
+    <script src="https://unpkg.com/jso/dist/jso.js"></script> <!--Quinn, not sure why but I had to remove the %22%3E for this to work -->
     <script src="https://www.gstatic.com/charts/loader.js"></script> <!--For creating line graphs of the data-->
 
 	<!-- Scripts -->
     <script src="script/index.js"></script>
-    <script src="Sources/sdk-oauth-master/app/index.js"></script>
 
 	<!-- Inline Script -->
 	<script>
@@ -285,12 +298,6 @@
                 event.preventDefault();
 
                 document.getElementById("account").scrollIntoView({ block: 'start', behavior: 'smooth' });
-            });
-
-            $("#userSubmit").on("click", function(event) {
-                event.preventDefault();
-
-                sendUsername();
             });
 
             setup();
