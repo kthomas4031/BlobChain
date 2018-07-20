@@ -105,16 +105,16 @@
                     <font color="white"> <h100> ANALYTICS: </h100> </font>
                 </div>
 
-                <div id = 'stepsGraph' class = 'graph'></div>
-                <p id= 'totalSteps'></p>
+                <canvas id = 'stepsGraph' class = 'graph'></canvas>
+                <p id= 'totalSteps'></p><p id= 'avgSteps'></p><br>
 
-                <div id = 'caloriesGraph' class = 'graph'></div>
-                <p id= 'averageCalories'></p>
+                <canvas id = 'caloriesGraph' class = 'graph'></canvas>
+                <br><p id= 'averageCalories'></p><br>
 
-                <div id = 'heartRateGraph' class = 'graph'></div>
-                <p id= 'averageRate'></p>
+                <canvas id = 'heartRateGraph' class = 'graph'></canvas>
+                <br><p id= 'averageRate'></p><br>
 
-                <div id = 'weight'></div>
+                <div id = 'weight'> Current Weight: </div>
             </section>
 
             <section id="spacer"></section>
@@ -131,8 +131,6 @@
                     <button type="button" class="button" onclick="sendSteps()">enter</button>
                 </form>
 
-                <p></p>
-
                 <form>
                     <input id="weightField" type="text" placeholder="enter weight...">
                     <button type="button" class="button" onclick="sendWeight()">enter</button>
@@ -144,8 +142,6 @@
                     <input id="calorieField" type="text" placeholder="enter calories...">
                     <button type="button" class="button" onclick="sendCalories()">enter</button>
                 </form>
-
-                <p></p>
 
                 <form>
                     <input id="heartrateField" type="text" placeholder="enter heartrate...">
@@ -164,30 +160,6 @@
                 <p id='accountBalance'></p>
             </section>
 
-            <!--
-            <div class="container">
-                <div class="slider">
-                    <figure>
-                        <div class="slide">
-                            <img src="images/tracers.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="images/z_1.gif">
-                        </div>
-                        <div class="slide">
-                            <l> </l>
-                            <img src="images/naruto.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="images/z_mood.gif">
-                        </div>
-                        <div class="slide">
-                            <img src="images/lover.jpg">
-                        </div>
-                    </figure>
-                </div>
-            </div>
--->
             <section id="spacer"></section>
             
             <section id="about" class='container'>
@@ -263,8 +235,8 @@
 
 	<!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/jso/dist/jso.js"></script> <!--Quinn, not sure why but I had to remove the %22%3E for this to work -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script> <!--For creating line graphs of the data-->
+    <script src="https://unpkg.com/jso/dist/jso.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script><!--For creating line graphs of the data-->
 
 	<!-- Scripts -->
     <script src="script/index.js"></script>
@@ -275,11 +247,6 @@
         "use strict";
 
         $(document).ready(function(event) {
-            // <h1><a href="#" id="#blobchainAnchor">BLOBCHAIN</a></h1>
-            // <a href="#" id="#analyticsAnchor">ANALYTICS</a>
-            // <a href="#" id="#aboutAnchor">ABOUT</a>
-            // <a href="#" id="#teamAnchor">TEAM</a>
-            // <a href="#" id="#accountAnchor">ACCOUNT</a>
 
             $("#blobchainAnchor").on("click", function(event) {
                 event.preventDefault();

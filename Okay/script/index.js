@@ -23,8 +23,7 @@ function setup(){
     const analyticsContract = web3.eth.contract(analyticsContractABI);
     analyticsContractInstance = analyticsContract.at(contractAddress);
     console.log(analyticsContractInstance);
-    google.charts.load('current', {'packages':['line']});
-    google.charts.setOnLoadCallback(getData);
+    getData();
 }
 
 function getBlockNum(){
@@ -55,17 +54,74 @@ function getData(){
 
     analyticsContractInstance.getWeight(account, function(error, result){
         if(!error)
-            document.getElementById('weight').innerHTML = "Current Weight: " + result;
+            document.getElementById('weight').innerHTML += result;
         else
             console.error("Error: No Weight Records Found");
     });
 
     analyticsContractInstance.getSteps(account, function(error, result){
         if(!error){
-            var stepsArray = result;
-            console.log(stepsArray);
-            document.getElementById('totalSteps').innerHTML = 'Total Steps: ' + eval(stepsArray.join('+'));
-            createStepsGraph(stepsArray);
+            document.getElementById('totalSteps').innerHTML = 'Total Steps: ' + eval(result.join('+'));
+            document.getElementById('avgSteps').innerHTML = 'Average Steps: ' + eval(result.join('+'))/result.length;
+            let entries = [];
+            let cleanedSteps = [];
+            for(let i = 0; i < result.length; i++){
+                entries[i] = i+1;
+                cleanedSteps[i] = result[i].c[0];
+            }
+            console.log(cleanedSteps);
+            var ctx = document.getElementById('stepsGraph').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: entries,
+                    datasets: [{
+                        label: "Steps",
+                        backgroundColor: 'transparent',
+                        borderColor: '#FFFFFF',
+                        pointBackgroundColor: '#9602d1',
+                        pointHoverBackgroundColor: '#FFFFFF',
+                        pointRadius: 5,
+                        data: cleanedSteps
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Steps Taken',
+                        fontColor: '#FFFFFF',
+                        fontSize: 25,
+                        position: 'top'
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    }
+                                }],
+                        yAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    } 
+                                }]
+                        }
+                }
+            });
         }
         else
             console.error("Error: No Step Records Found");
@@ -76,6 +132,64 @@ function getData(){
             var heartRateArray = result;
             console.log(heartRateArray);
             document.getElementById('averageRate').innerHTML = 'Average Heart Rate:' + (eval(heartRateArray.join('+'))/heartRateArray.length);
+            let entries = [];
+            let cleanedSteps = [];
+            for(let i = 0; i < result.length; i++){
+                entries[i] = i+1;
+                cleanedSteps[i] = result[i].c[0];
+            }
+            var ctx = document.getElementById('heartRateGraph').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: entries,
+                    datasets: [{
+                        label: "Heart Rate",
+                        backgroundColor: 'transparent',
+                        borderColor: '#FFFFFF',
+                        pointBackgroundColor: '#9602d1',
+                        pointHoverBackgroundColor: '#FFFFFF',
+                        pointRadius: 5,
+                        data: cleanedSteps
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Heart Rate',
+                        fontColor: '#FFFFFF',
+                        fontSize: 25,
+                        position: 'top'
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    }
+                                }],
+                        yAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    } 
+                                }]
+                        }
+                }
+            });
         }
         else
             console.error("Error: No Heart Rate Records Found");
@@ -83,9 +197,66 @@ function getData(){
 
     analyticsContractInstance.getCalories(account, function(error, result){
         if(!error){
-            var caloriesArray = result;
-            console.log(caloriesArray);
-            document.getElementById('averageCalories').innerHTML = 'Average Calories: ' + (eval(caloriesArray.join('+'))/caloriesArray.length);
+            // console.log(caloriesArray);
+            document.getElementById('averageCalories').innerHTML = 'Average Calories: ' + (eval(result.join('+'))/result.length);
+            let cleanedCals = [];
+            let entries = [];
+            for(let i = 0; i < result.length; i++){
+                entries[i] = i+1;
+                cleanedCals[i] = result[i].c[0];
+            }
+            var ctx = document.getElementById('caloriesGraph').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: entries,
+                    datasets: [{
+                        label: "Steps",
+                        backgroundColor: 'transparent',
+                        borderColor: '#FFFFFF',
+                        pointBackgroundColor: '#9602d1',
+                        pointHoverBackgroundColor: '#FFFFFF',
+                        pointRadius: 5,
+                        data: cleanedCals
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Calorie Intake',
+                        fontColor: '#FFFFFF',
+                        fontSize: 25,
+                        position: 'top'
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    }
+                                }],
+                        yAxes: [{
+                                    gridLines: {
+                                        color: '#FFFFFF'
+                                    },
+                                    ticks:{
+                                        fontColor: '#FFFFFF',
+                                        fontSize: 15
+                                    } 
+                                }]
+                        }
+                }
+            });
         }
         else
             console.error("Error: No Calorie Records Found");
@@ -101,7 +272,7 @@ function getData(){
     analyticsContractInstance.getUserName(account, function(error, result){
         if(!error && result !== undefined && result !== ""){
             elem = document.getElementById('usernameDisplay');
-            elem.innerHTML = 'Welcome ' + result;
+            elem.innerHTML = 'Welcome Back ' + result;
             elem.style.textAlign = "center";
             document.getElementById('usernameField').remove();
             document.getElementById('userSubmit').remove();
@@ -170,37 +341,4 @@ function sendDevice(){
     //     analyticsContractInstance.updateDevices(document.getElementById('stepField').value);
     // else
     //     console.log("Please Enter a Device before clicking this Button.");
-}
-
-function createStepsGraph(array){
-    let entries = [];
-    let combinedData = [];
-    for(let i = 0; i < array.length; i++){
-        entries[i] = i+1;
-        // console.log(entries[i], array[i].c[0]);
-        combinedData[i] = [entries[i], array[i].c[0]];
-    }
-
-    let data = new google.visualization.DataTable();
-    data.addColumn('number', 'Entry Number');
-    data.addColumn('number', 'Steps')
-
-    console.log(combinedData);
-    data.addRows(combinedData);
-
-    let options = {
-        chart: {
-            title: 'Steps Taken Over Time'
-        },
-        hAxis: {
-          title: 'Entry Number'
-        },
-        vAxis: {
-          title: 'Steps Taken'
-        },
-        backgroundColor: '#C669FF'
-    };
-
-    let chart = new google.charts.line(document.getElementById('stepsGraph'));
-    chart.draw(data, options);
 }
