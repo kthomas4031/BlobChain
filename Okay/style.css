@@ -141,7 +141,7 @@ body {
 #username
 {
     background: #67045B;
-    padding: 20px;
+    padding: 10px;
     height: 40px;
 }
 
@@ -155,8 +155,7 @@ body {
 #username form
 {
     float: right;
-    margin-top: 0px;
-    margin-bottom: 50px;
+    margin-top: -25px;
 }
 
 #username input[type="text"]
@@ -165,8 +164,6 @@ body {
     height: 25px;
     width: 250px;
     color: #C669FF;
-    margin-top: 0px;
-    margin-bottom: 75px;
 }
 
 #analytics p

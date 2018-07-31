@@ -214,7 +214,7 @@ function getData(){
                 data: {
                     labels: entries,
                     datasets: [{
-                        label: "Steps",
+                        label: "Calories",
                         backgroundColor: 'transparent',
                         borderColor: '#FFFFFF',
                         pointBackgroundColor: '#9602d1',

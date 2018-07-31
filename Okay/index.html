@@ -37,194 +37,198 @@
             <p>The Bushey Bunch</p>
         </section>
             
-            <section id="username">
-                <h1 id="usernameDisplay">please enter your username</h1>
-                <form>
-                    <input id="usernameField" type="text" placeholder="enter username...">
-                    <button id="userSubmit" type="button" class="button" onclick="sendUsername()">enter</button>
-                </form>
-            </section>
+        <section id="username">
+            <h1 id="usernameDisplay">please enter your username</h1>
+            <form>
+                <input id="usernameField" type="text" placeholder="enter username...">
+                <button id="userSubmit" type="button" class="button" onclick="sendUsername()">submit</button>
+            </form>
+        </section>
 
 
-            <section id="spacer"></section>
-            
-            <section id="boxes" class='container'>
-                <div class="box">
-                    <a href="https://metamask.io/">
-                        <img src="images/metamask-logo.png">
-                    </a>
-                    <h1>MetaMask </h1>
-                    <p>How to install MetaMask.io</p>
-                </div>
+        <section id="spacer"></section>
         
-                <div class="box">
-                    <a href="https://en.wikipedia.org/wiki/Blockchain">
-                        <img src="images/blockchainthing.jpg">
-                    </a>
-                    <h1>Blockchain </h1>
-                    <p>This is what a blockchain is, it's cool</p>
-                </div>
-        
-                <div class="box">
-                    <a href="https://ethereum.org/">
-                        <img src="images/Ethereum.png">
-                    </a>
-                    <h1>Ethereum </h1>
-                    <p>The project page for the Ethereum blockchain</p>
-                </div>
-        
-                <div class="box">
-                    <a href="https://coinmarketcap.com/">
-                        <img src="images/bitcoin-exchange.jpg">
-                    </a>
-                    <h1>Currency Rates</h1>
-                    <p>The constant, everchanging numbers of cryptocurrency</p>
-                </div>
-        
-                <div class="box">
-                    <a href="https://app.synapsefl.com">
-                        <img src="images/Synapse.png">
-                    </a>
-                    <h1>Synapse</h1>
-                    <p>All-encompassing, interactive, and flexible methodology for building, facilitating, and exposing the Entrepreneurial Ecosystem of Florida.</p>
-                </div>
+        <section id="boxes" class='container'>
+            <div class="h100container">
+                <font color="white"> <h100> QUICK LINKS: </h100> </font>
+            </div>
 
-                <div class="box">
-                        <a href="https://bitcoin.org/en/">
-                            <img src="images/Bitcoin.png">
-                        </a>
-                        <h1>Bitcoin</h1>
-                        <p>A type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds</p>
-                </div>
-            </section>
+            <div class="box">
+                <a href="https://metamask.io/">
+                    <img src="images/metamask-logo.png">
+                </a>
+                <h1>MetaMask </h1>
+                <p>How to install MetaMask.io</p>
+            </div>
+    
+            <div class="box">
+                <a href="https://en.wikipedia.org/wiki/Blockchain">
+                    <img src="images/blockchainthing.jpg">
+                </a>
+                <h1>Blockchain </h1>
+                <p>This is what a blockchain is, it's cool</p>
+            </div>
+    
+            <div class="box">
+                <a href="https://ethereum.org/">
+                    <img src="images/Ethereum.png">
+                </a>
+                <h1>Ethereum </h1>
+                <p>The project page for the Ethereum blockchain</p>
+            </div>
+    
+            <div class="box">
+                <a href="https://coinmarketcap.com/">
+                    <img src="images/bitcoin-exchange.jpg">
+                </a>
+                <h1>Currency Rates</h1>
+                <p>The constant, everchanging numbers of cryptocurrency</p>
+            </div>
+    
+            <div class="box">
+                <a href="https://app.synapsefl.com">
+                    <img src="images/Synapse.png">
+                </a>
+                <h1>Synapse</h1>
+                <p>All-encompassing, interactive, and flexible methodology for building, facilitating, and exposing the Entrepreneurial Ecosystem of Florida.</p>
+            </div>
 
-            <section id="spacer"></section>
+            <div class="box">
+                    <a href="https://bitcoin.org/en/">
+                        <img src="images/Bitcoin.png">
+                    </a>
+                    <h1>Bitcoin</h1>
+                    <p>A type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds</p>
+            </div>
+        </section>
 
-            <section id="analytics" class='container'>
+        <section id="spacer"></section>
+
+        <section id="analytics" class='container'>
+            <div class="h100container">
+                <font color="white"> <h100> ANALYTICS: </h100> </font>
+            </div>
+
+            <canvas id = 'stepsGraph' class = 'graph'></canvas>
+            <p id= 'totalSteps'></p><p id= 'avgSteps'></p><br>
+
+            <canvas id = 'caloriesGraph' class = 'graph'></canvas>
+            <br><p id= 'averageCalories'></p><br>
+
+            <canvas id = 'heartRateGraph' class = 'graph'></canvas>
+            <br><p id= 'averageRate'></p><br>
+
+            <div id = 'weight'> Current Weight: </div>
+        </section>
+
+        <section id="spacer"></section>
+        
+        <section id='account' class='container'>
+            <div class="h100container">
+                <font color="white"> <h100>DATA</h100> </font>
+            </div>
+
+            <p></p>
+
+            <form>
+                <input id="stepField" type="number" min='0' placeholder="enter steps...">
+                <button type="button" class="button" onclick="sendSteps()">enter</button>
+            </form>
+
+            <form>
+                <input id="weightField" type="number" min='0' placeholder="enter weight...">
+                <button type="button" class="button" onclick="sendWeight()">enter</button>
+            </form>
+
+            <p></p>
+
+            <form>
+                <input id="calorieField" type="number" min='0' placeholder="enter calories...">
+                <button type="button" class="button" onclick="sendCalories()">enter</button>
+            </form>
+
+            <form>
+                <input id="heartrateField" type="number" min='0' placeholder="enter heartrate...">
+                <button type="button" class="button" onclick="sendHeartRate()">enter</button>
+            </form>
+
+            <p></p>
+
+            <!--<form>-->
+                <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
+                <!--<button type="submit" class="button" onclick="newDevice()">new device? </button>
+            </form>-->
+
+            <p id='blockNum'></p>
+            <p id='accountNumber'></p>
+            <p id='accountBalance'></p>
+        </section>
+
+        <section id="spacer"></section>
+        
+        <section id="about" class='container'>
                 <div class="h100container">
-                    <font color="white"> <h100> ANALYTICS: </h100> </font>
+                    <font color="white"> <h100> ABOUT: </h100> </font>
                 </div>
+            <p>
+                    The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way.
+                    Our desire is to see people inspired by our app to increase their activity levels and better monitor their health habits. We find that when you're shown
+                    your own statistics, you're automatically driven to make them better (like in a videogame). </p>
+                    <p>So for all of our users: Get out there, keep going, and stay strong!
+            </p>
+            <p><img src="images/z_zoe.gif"></p>
+        </section>
 
-                <canvas id = 'stepsGraph' class = 'graph'></canvas>
-                <p id= 'totalSteps'></p><p id= 'avgSteps'></p><br>
+        <section id="spacer"></section>
+        
 
-                <canvas id = 'caloriesGraph' class = 'graph'></canvas>
-                <br><p id= 'averageCalories'></p><br>
-
-                <canvas id = 'heartRateGraph' class = 'graph'></canvas>
-                <br><p id= 'averageRate'></p><br>
-
-                <div id = 'weight'> Current Weight: </div>
-            </section>
-
-            <section id="spacer"></section>
-            
-            <section id='account' class='container'>
+        <section id="team">
+            <div class="container">
                 <div class="h100container">
-                    <font color="white"> <h100>DATA</h100> </font>
+                    <font color="white"> <h100> TEAM: </h100> </font>
                 </div>
-
-                <p></p>
-
-                <form>
-                    <input id="stepField" type="text" placeholder="enter steps...">
-                    <button type="button" class="button" onclick="sendSteps()">enter</button>
-                </form>
-
-                <form>
-                    <input id="weightField" type="text" placeholder="enter weight...">
-                    <button type="button" class="button" onclick="sendWeight()">enter</button>
-                </form>
-
-                <p></p>
-
-                <form>
-                    <input id="calorieField" type="text" placeholder="enter calories...">
-                    <button type="button" class="button" onclick="sendCalories()">enter</button>
-                </form>
-
-                <form>
-                    <input id="heartrateField" type="text" placeholder="enter heartrate...">
-                    <button type="button" class="button" onclick="sendHeartRate()">enter</button>
-                </form>
-
-                <p></p>
-
-                <!--<form>-->
-                    <!-- <input id="newDevice" type="text" placeholder="new device?"> -->
-                    <!--<button type="submit" class="button" onclick="newDevice()">new device? </button>
-                </form>-->
-
-                <p id='blockNum'></p>
-                <p id='accountNumber'></p>
-                <p id='accountBalance'></p>
-            </section>
-
-            <section id="spacer"></section>
-            
-            <section id="about" class='container'>
-                    <div class="h100container">
-                        <font color="white"> <h100> ABOUT: </h100> </font>
-                    </div>
                 <p>
-                        The Blobchain Initiative is an endeavor to allow the everyday person to track their progress towards whatever health goals they may have in an easy way.
-                        Our desire is to see people inspired by our app to increase their activity levels and better monitor their health habits. We find that when you're shown
-                        your own statistics, you're automatically driven to make them better (like in a videogame). </p>
-                        <p>So for all of our users: Get out there, keep going, and stay strong!
-                </p>
-                <p><img src="images/z_zoe.gif"></p>
-            </section>
-
-            <section id="spacer"></section>
-            
-
-            <section id="team">
-                <div class="container">
-                    <div class="h100container">
-                        <font color="white"> <h100> TEAM: </h100> </font>
-                    </div>
-                    <p>
-                            This team consists of 4 amazingly smart students currently working towards their bachelor's degrees in Computer Science. They came together through
-                            being roommates, but more importantly through having the same awesome programming teacher, Dr. Dean Bushey (hence the group name). They came into 
-                            this with minimal knowledge of web design, and no knowledge of smart contracts or decentralized apps, and now here they are. With a moderately nice app
-                            that just has a few hiccups here and there.</p>
-                    <div class="box">
-                        <a href="https://www.linkedin.com/in/kyle-thomas-755131a4/">
-                            <img src="images/kyleface.png">
-                        </a>
-                        <h1> Kyle </h1>
-                        <p> Team Lead - Backend/Smart Contract Developer</p>
-                    </div>
-            
-                    <div class="box">
-                        <a href="https://www.linkedin.com/in/lina-brihoum-b81572100/">
-                            <img src="images/lina_about.jpg">
-                        </a>
-                        <h1> Lina </h1>
-                        <p> Team Driver - Front End Developer/Functionality Developer </p>
-                    </div>
-            
-                    <div class="box">
-                        <a href="https://www.linkedin.com/in/zoe-sewell-84065a141/">
-                            <img src="images/zoeface2.jpg">
-                        </a>
-                        <h1> Zoe </h1>
-                        <p> Creativity Director - Front End Developer/Designer</p>
-                    </div>
-            
-                    <div class="box">
-                        <a href="https://www.linkedin.com/in/quinn-donoho-9ba34215a/">
-                            <img src="images/quinn_about.JPG">
-                        </a>
-                        <h1>Quinn</h1>
-                        <p> Smart Devices Coordinator - Backend/Functionality Developer</p>
-                    </div>
-                    <p>
-                        <img src="images/im not sure.png" style="width:900px;">
-                    </p>
+                        This team consists of 4 amazingly smart students currently working towards their bachelor's degrees in Computer Science. They came together through
+                        being roommates, but more importantly through having the same awesome programming teacher, Dr. Dean Bushey (hence the group name). They came into 
+                        this with minimal knowledge of web design, and no knowledge of smart contracts or decentralized apps, and now here they are. With a moderately nice app
+                        that just has a few hiccups here and there.</p>
+                <div class="box">
+                    <a href="https://www.linkedin.com/in/kyle-thomas-755131a4/">
+                        <img src="images/kyleface.png">
+                    </a>
+                    <h1> Kyle </h1>
+                    <p> Team Lead - Backend/Smart Contract Developer</p>
                 </div>
-            </section>
-            <section id="spacer"></section>
+        
+                <div class="box">
+                    <a href="https://www.linkedin.com/in/lina-brihoum-b81572100/">
+                        <img src="images/lina_about.jpg">
+                    </a>
+                    <h1> Lina </h1>
+                    <p> Team Driver - Front End Developer/Functionality Developer </p>
+                </div>
+        
+                <div class="box">
+                    <a href="https://www.linkedin.com/in/zoe-sewell-84065a141/">
+                        <img src="images/zoeface2.jpg">
+                    </a>
+                    <h1> Zoe </h1>
+                    <p> Creativity Director - Front End Developer/Designer</p>
+                </div>
+        
+                <div class="box">
+                    <a href="https://www.linkedin.com/in/quinn-donoho-9ba34215a/">
+                        <img src="images/quinn_about.JPG">
+                    </a>
+                    <h1>Quinn</h1>
+                    <p> Smart Devices Coordinator - Backend/Functionality Developer</p>
+                </div>
+                <p>
+                    <img src="images/im not sure.png" style="width:900px;">
+                </p>
+            </div>
+        </section>
+        <section id="spacer"></section>
 
     </main>
     
