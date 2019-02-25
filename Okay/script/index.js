@@ -342,3 +342,5 @@ function sendDevice(){
     // else
     //     console.log("Please Enter a Device before clicking this Button.");
 }
+
+//AYO
